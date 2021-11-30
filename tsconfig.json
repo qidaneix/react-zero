@@ -1,7 +1,7 @@
 {
-    "compilerOptions": {
-        "module": "esnext",
-        "jsx": "react"
-    },
-    "include": ["src/**/*"],
+  "compilerOptions": {
+    "module": "esnext",
+    "jsx": "react"
+  },
+  "include": ["src/**/*"]
 }
