@@ -8,13 +8,17 @@ module.exports = {
   },
   mode: "development",
   resolve: {
-    extensions: [".ts", "tsx", "..."],
+    extensions: [".ts", ".tsx", ".jsx", "..."],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         loader: "ts-loader",
+      },
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
       },
     ],
   },
