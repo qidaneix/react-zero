@@ -1,4 +1,4 @@
-let foo = "123";
+let foo = "good luck my boy";
 let bar = foo;
 
 export { bar };

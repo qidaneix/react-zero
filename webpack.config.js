@@ -18,6 +18,11 @@ module.exports = {
       },
     ],
   },
+  devtool: "eval-source-map",
+  devServer: {
+    port: 9000,
+    open: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
