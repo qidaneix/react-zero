@@ -30,11 +30,16 @@ module.exports = {
               modules: {
                 localIdentName: "[path][name]__[local]-[hash:base64:5]",
               },
-              importLoader: 1,
+              importLoaders: 1,
               sourceMap: true,
             },
           },
-          "postcss-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
       {
@@ -51,11 +56,82 @@ module.exports = {
               sourceMap: true,
             },
           },
-          "postcss-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
           {
             loader: "sass-loader",
             options: {
               sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.less$/,
+        exclude: [
+          path.resolve(__dirname, "./node_modules/antd"),
+          path.resolve(__dirname, "./src/theme"),
+        ],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              },
+              importLoaders: 1,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.less$/,
+        include: [
+          path.resolve(__dirname, "./node_modules/antd"),
+          path.resolve(__dirname, "./src/theme"),
+        ],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+              lessOptions: {
+                javascriptEnabled: true,
+              },
             },
           },
         ],
