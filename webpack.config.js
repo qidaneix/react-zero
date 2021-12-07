@@ -29,6 +29,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: "[path][name]__[local]-[hash:base64:5]",
+                namedExport: true,
               },
               importLoaders: 1,
               sourceMap: true,
@@ -51,6 +52,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                namedExport: true,
               },
               importLoaders: 1,
               sourceMap: true,
@@ -83,6 +85,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                namedExport: true,
               },
               importLoaders: 1,
               sourceMap: true,
@@ -98,9 +101,6 @@ module.exports = {
             loader: "less-loader",
             options: {
               sourceMap: true,
-              lessOptions: {
-                javascriptEnabled: true,
-              },
             },
           },
         ],

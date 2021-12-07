@@ -6,7 +6,8 @@ import {
   LaptopOutlined,
   NotificationOutlined,
 } from "@ant-design/icons";
-import styles from "./App.less";
+import { ReactRouterTest } from "./components/react-router-test";
+import * as styles from "./App.scss";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -69,6 +70,7 @@ export function App(props) {
             }}
           >
             <div className={styles.error}>Content</div>
+            <ReactRouterTest />
           </Content>
         </Layout>
       </Layout>
