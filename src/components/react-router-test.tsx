@@ -25,6 +25,7 @@ export const ReactRouterTest: React.FC = () => {
         <Route path="/" element={<Home />}>
           <Route path="about" element={<About />} />
           <Route path="topics" element={<Topics />}>
+            <Route index element={<div>Topics Index</div>} />
             <Route path="invoices/:id" element={<Invoice />} />
           </Route>
           <Route path="*" element={<div>Not Found</div>} />

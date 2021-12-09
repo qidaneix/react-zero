@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { getInvoices } from "./data";
 import * as styles from "./topics.scss";
 
@@ -9,13 +9,18 @@ export const Topics: React.FC = () => {
       Topics
       <nav className={styles.nav}>
         {getInvoices().map((invoice) => (
-          <Link
+          <NavLink
             className={styles.link}
+            style={({ isActive }) => ({
+              display: "block",
+              margin: "1rem 0",
+              color: isActive ? "red" : "",
+            })}
             to={`/topics/invoices/${invoice.number}`}
             key={invoice.number}
           >
             {invoice.name}
-          </Link>
+          </NavLink>
         ))}
       </nav>
       <Outlet />
